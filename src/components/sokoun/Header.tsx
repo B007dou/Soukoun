@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Menu, X, Sparkles, Globe, LifeBuoy } from "lucide-react";
+import { motion } from "frer-motion";
+import { Menu, X, Globe, LifeBuoy } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
+import logoAsset from "@/assets/sokoun-logo.png.asset.json";
 
 type Props = {
   onEmergency: () => void;

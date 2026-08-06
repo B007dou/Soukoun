@@ -1,5 +1,5 @@
-import { Sparkles } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
+import logoAsset from "@/assets/sokoun-logo.png.asset.json";
 
 export function Footer() {
   const { t } = useI18n();
@@ -7,9 +7,11 @@ export function Footer() {
     <footer className="border-t border-border bg-secondary/30">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-10 sm:flex-row sm:px-6 lg:px-8">
         <div className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-2xl bg-gradient-to-br from-lavender to-sage">
-            <Sparkles className="h-4 w-4 text-primary-foreground" />
-          </span>
+          <img
+            src={logoAsset.url}
+            alt="Sokoun"
+            className="h-9 w-auto object-contain"
+          />
           <div className="leading-tight">
             <p className="text-sm font-semibold text-foreground">Sokoun · سكون</p>
             <p className="text-xs text-muted-foreground">{t("footer_tag")}</p>

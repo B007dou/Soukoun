@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Sparkles, Globe, LifeBuoy } from "lucide-react";
+import { Menu, X, Globe, LifeBuoy } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
+import logoAsset from "@/assets/sokoun-logo.png.asset.json";
 
 type Props = {
   onEmergency: () => void;
@@ -38,15 +39,12 @@ export function Header({ onEmergency }: Props) {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#home" className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-2xl bg-gradient-to-br from-lavender to-sage shadow-[var(--shadow-glow)]">
-            <Sparkles className="h-4.5 w-4.5 text-primary-foreground" strokeWidth={2.2} />
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="text-lg font-semibold tracking-tight text-foreground">Sokoun</span>
-            <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-              سكون
-            </span>
-          </span>
+          <img
+            src={logoAsset.url}
+            alt="Sokoun"
+            className="h-9 w-auto object-contain"
+          />
+          <span className="text-lg font-semibold tracking-tight text-foreground">Sokoun</span>
         </a>
 
         <nav className="hidden items-center gap-1 md:flex">

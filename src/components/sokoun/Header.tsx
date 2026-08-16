@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Globe, LifeBuoy } from "lucide-react";
+import { Menu, X, Globe, LifeBuoy, LogIn, UserPlus } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/sokoun-logo.png.asset.json";
 
 type Props = {
   onEmergency: () => void;
+  onSignIn?: () => void;
+  onSignUp?: () => void;
 };
 
-export function Header({ onEmergency }: Props) {
+export function Header({ onEmergency, onSignIn, onSignUp }: Props) {
   const { t, lang, setLang } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -76,11 +78,28 @@ export function Header({ onEmergency }: Props) {
             className="hidden rounded-full sm:inline-flex"
           >
             <LifeBuoy className="h-4 w-4" />
-            <span className="hidden lg:inline">{t("emergency")}</span>
+            <span className="hidden xl:inline">{t("emergency")}</span>
           </Button>
 
-          <Button asChild size="sm" className="hidden rounded-full md:inline-flex">
-            <a href="#practitioners">{t("nav_book")}</a>
+          {/* Sign In Button */}
+          <Button
+            onClick={onSignIn}
+            variant="ghost"
+            size="sm"
+            className="hidden rounded-full text-foreground/90 hover:bg-secondary sm:inline-flex"
+          >
+            <LogIn className="h-4 w-4" />
+            <span>{t("signin")}</span>
+          </Button>
+
+          {/* Sign Up Button */}
+          <Button
+            onClick={onSignUp}
+            size="sm"
+            className="hidden rounded-full shadow-sm sm:inline-flex"
+          >
+            <UserPlus className="h-4 w-4" />
+            <span>{t("signup")}</span>
           </Button>
 
           <button
@@ -110,6 +129,31 @@ export function Header({ onEmergency }: Props) {
                 {l.label}
               </a>
             ))}
+
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              <Button
+                onClick={() => {
+                  setOpen(false);
+                  if (onSignIn) onSignIn();
+                }}
+                variant="outline"
+                className="rounded-full"
+              >
+                <LogIn className="h-4 w-4" />
+                {t("signin")}
+              </Button>
+              <Button
+                onClick={() => {
+                  setOpen(false);
+                  if (onSignUp) onSignUp();
+                }}
+                className="rounded-full"
+              >
+                <UserPlus className="h-4 w-4" />
+                {t("signup")}
+              </Button>
+            </div>
+
             <div className="mt-2 flex gap-2">
               <Button
                 onClick={() => setLang(lang === "fr" ? "ar" : "fr")}
@@ -120,7 +164,10 @@ export function Header({ onEmergency }: Props) {
                 {lang === "fr" ? "العربية" : "Français"}
               </Button>
               <Button
-                onClick={onEmergency}
+                onClick={() => {
+                  setOpen(false);
+                  onEmergency();
+                }}
                 variant="destructive"
                 className="flex-1 rounded-full"
               >

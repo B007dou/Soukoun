@@ -52,6 +52,31 @@ export const dict = {
 
   footer_tag: { fr: "Sérénité & tranquillité", ar: "سكون وطمأنينة" },
   footer_rights: { fr: "Tous droits réservés", ar: "جميع الحقوق محفوظة" },
+
+  signin: { fr: "Connexion", ar: "تسجيل الدخول" },
+  signup: { fr: "S'inscrire", ar: "إنشاء حساب" },
+  auth_signin_title: { fr: "Bon retour parmi nous", ar: "مرحباً بعودتك" },
+  auth_signin_desc: { fr: "Accédez à votre espace personnel Sokoun", ar: "سجّل الدخول إلى مساحتك الخاصة في سكون" },
+  auth_signup_title: { fr: "Créer un compte", ar: "إنشاء حساب جديد" },
+  auth_signup_desc: { fr: "Rejoignez Sokoun pour un accompagnement bienveillant", ar: "انضم إلى سكون للحصول على دعم متكامل وموثوق" },
+  auth_fullname: { fr: "Nom complet", ar: "الاسم الكامل" },
+  auth_email: { fr: "Adresse e-mail", ar: "البريد الإلكتروني" },
+  auth_password: { fr: "Mot de passe", ar: "كلمة المرور" },
+  auth_placeholder_email: { fr: "exemple@email.com", ar: "example@email.com" },
+  auth_placeholder_name: { fr: "Votre nom et prénom", ar: "اسمك الكامل" },
+  auth_placeholder_pwd: { fr: "••••••••", ar: "••••••••" },
+  auth_btn_signin: { fr: "Se connecter", ar: "تسجيل الدخول" },
+  auth_btn_signup: { fr: "Créer mon compte", ar: "إنشاء الحساب" },
+  auth_no_account: { fr: "Pas encore de compte ?", ar: "ليس لديك حساب بعد؟" },
+  auth_has_account: { fr: "Vous avez déjà un compte ?", ar: "لديك حساب بالفعل؟" },
+  auth_success_signup: {
+    fr: "Inscription réussie ! Veuillez vérifier votre boîte e-mail pour confirmer.",
+    ar: "تم إنشاء الحساب بنجاح! يرجى التحقق من بريدك الإلكتروني لتأكيد الحساب.",
+  },
+  auth_success_signin: {
+    fr: "Connexion réussie ! Bienvenue.",
+    ar: "تم تسجيل الدخول بنجاح! مرحباً بك.",
+  },
 } satisfies Dict;
 
 export type DictKey = keyof typeof dict;

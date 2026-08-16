@@ -9,6 +9,7 @@ import { About } from "@/components/sokoun/About";
 import { Footer } from "@/components/sokoun/Footer";
 import { EmergencyModal } from "@/components/sokoun/EmergencyModal";
 import { EmergencyFab } from "@/components/sokoun/EmergencyFab";
+import { AuthModal, type AuthMode } from "@/components/sokoun/AuthModal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,11 +32,27 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [emergencyOpen, setEmergencyOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<AuthMode>("signin");
+
+  const handleOpenSignIn = () => {
+    setAuthMode("signin");
+    setAuthOpen(true);
+  };
+
+  const handleOpenSignUp = () => {
+    setAuthMode("signup");
+    setAuthOpen(true);
+  };
 
   return (
     <I18nProvider>
       <div className="min-h-screen bg-background">
-        <Header onEmergency={() => setEmergencyOpen(true)} />
+        <Header
+          onEmergency={() => setEmergencyOpen(true)}
+          onSignIn={handleOpenSignIn}
+          onSignUp={handleOpenSignUp}
+        />
         <main>
           <Hero />
           <Practitioners />
@@ -45,6 +62,11 @@ function Index() {
         <Footer />
         <EmergencyFab onClick={() => setEmergencyOpen(true)} />
         <EmergencyModal open={emergencyOpen} onClose={() => setEmergencyOpen(false)} />
+        <AuthModal
+          open={authOpen}
+          initialMode={authMode}
+          onClose={() => setAuthOpen(false)}
+        />
       </div>
     </I18nProvider>
   );

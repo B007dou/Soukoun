@@ -1,5 +1,4 @@
 import { useI18n } from "@/lib/i18n";
-import logoAsset from "@/assets/sokoun-logo.png.asset.json";
 
 export function Footer() {
   const { t } = useI18n();
@@ -8,7 +7,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-10 sm:flex-row sm:px-6 lg:px-8">
         <div className="flex items-center gap-2.5">
           <img
-            src={logoAsset.url}
+            src="/logo.png"
             alt="Sokoun"
             className="h-9 w-auto object-contain"
           />

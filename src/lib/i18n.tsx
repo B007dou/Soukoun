@@ -60,6 +60,22 @@ export const dict = {
   auth_signup_title: { fr: "Créer un compte", ar: "إنشاء حساب جديد" },
   auth_signup_desc: { fr: "Rejoignez Sokoun pour un accompagnement bienveillant", ar: "انضم إلى سكون للحصول على دعم متكامل وموثوق" },
   auth_fullname: { fr: "Nom complet", ar: "الاسم الكامل" },
+  auth_firstname: { fr: "Prénom", ar: "الاسم" },
+  auth_lastname: { fr: "Nom de famille", ar: "اللقب" },
+  auth_placeholder_firstname: { fr: "ex. Youssef", ar: "مثال: يوسف" },
+  auth_placeholder_lastname: { fr: "ex. Ben Ali", ar: "مثال: بن علي" },
+  auth_anon_name: { fr: "Pseudonyme anonyme (généré)", ar: "اسم مستعار مجهول (تلقائي)" },
+  auth_anon_desc: {
+    fr: "Ce pseudo préserve votre totale confidentialité sur Sokoun.",
+    ar: "يحمي هذا الاسم المستعار خصوصيتك التامة على سكون.",
+  },
+  auth_regen_anon: { fr: "Changer le pseudo", ar: "تغيير الاسم المستعار" },
+  auth_birthdate: { fr: "Date de naissance", ar: "تاريخ الميلاد" },
+  auth_age_requirement: { fr: "Accès réservé aux 18 ans et plus", ar: "مخصص للبالغين 18 سنة فما فوق" },
+  auth_age_error: {
+    fr: "Vous devez avoir au moins 18 ans pour pouvoir vous inscrire.",
+    ar: "يجب أن يكون عمرك 18 سنة أو أكثر لتتمكن من إنشاء حساب.",
+  },
   auth_email: { fr: "Adresse e-mail", ar: "البريد الإلكتروني" },
   auth_password: { fr: "Mot de passe", ar: "كلمة المرور" },
   auth_placeholder_email: { fr: "exemple@email.com", ar: "example@email.com" },
@@ -70,8 +86,8 @@ export const dict = {
   auth_no_account: { fr: "Pas encore de compte ?", ar: "ليس لديك حساب بعد؟" },
   auth_has_account: { fr: "Vous avez déjà un compte ?", ar: "لديك حساب بالفعل؟" },
   auth_success_signup: {
-    fr: "Inscription réussie ! Veuillez vérifier votre boîte e-mail pour confirmer.",
-    ar: "تم إنشاء الحساب بنجاح! يرجى التحقق من بريدك الإلكتروني لتأكيد الحساب.",
+    fr: "Inscription réussie ! Bienvenue sur Sokoun.",
+    ar: "تم إنشاء الحساب بنجاح! مرحباً بك في سكون.",
   },
   auth_success_signin: {
     fr: "Connexion réussie ! Bienvenue.",

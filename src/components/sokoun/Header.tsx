@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Menu, X, Globe, LifeBuoy, LogIn, UserPlus } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/sokoun-logo.png.asset.json";
 
 type Props = {
   onEmergency: () => void;
@@ -42,9 +41,9 @@ export function Header({ onEmergency, onSignIn, onSignUp }: Props) {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#home" className="flex items-center gap-2.5">
           <img
-            src={logoAsset.url}
+            src="/logo.png"
             alt="Sokoun"
-            className="h-9 w-auto object-contain"
+            className="h-10 w-auto object-contain"
           />
           <span className="text-lg font-semibold tracking-tight text-foreground">Sokoun</span>
         </a>
